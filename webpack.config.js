@@ -1,6 +1,27 @@
+/*
+ * @Author: gaocong 
+ * @Date: 2018-07-26 10:53:33 
+ * @Last Modified by: gaocong
+ * @Last Modified time: 2018-07-26 14:50:26
+ */
+
 const path = require('path');
 var webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
+//获取html-webpack-plugin的方法
+var getHtmlConfig = function (name) {
+    return {
+        template: './src/view/' + name + '.html',
+        filename: 'view/' + name + '.html',
+        inject: true,
+        hash: true,
+        chunks: ['common', name]
+    };
+}
+
+//webpacjde 
 var config = {
     entry: {
         common: ['./src/page/common/index.js'],
@@ -9,7 +30,11 @@ var config = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
+        publicPath: '/dist',
         filename: 'js/[name].js',
+    },
+    externals: {
+        'jquery': "window.jquery"
     },
     module: {
         rules: [{
@@ -19,10 +44,17 @@ var config = {
                 fallback: "style-loader",
                 use: "css-loader"
             })
-        }]
+        }, { test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=100&name=resource/[name].[ext]' },
+        { test: /\.string$/, loader: 'html-loader' },
+        ]
     },
     plugins: [
-        new ExtractTextPlugin("css/[name].css")
+        //css单独打包
+        new ExtractTextPlugin("css/[name].css"),
+        //Html模板处理
+        new HtmlWebpackPlugin(getHtmlConfig('index')),
+        new HtmlWebpackPlugin(getHtmlConfig('login')),
+
     ],
     optimization: {
         splitChunks: {

@@ -13,17 +13,20 @@
   "author": "gaocong",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/gaocong0511/feifeiMallFront/issues"
+    "url": "https://github.com/gaocong0 511/feifeiMallFront/issues"
   },
   "homepage": "https://github.com/gaocong0511/feifeiMallFront#readme",
   "devDependencies": {
     "css-loader": "^1.0.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^1.1.11",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
     "style-loader": "^0.21.0",
+    "url-loader": "^1.0.1",
     "webpack": "^4.16.2",
-    "webpack-cli": "^3.1.0"
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5"
   },
-  "dependencies": {
-    "jquery": "^3.3.1"
-  }
+  "dependencies": {}
 }
