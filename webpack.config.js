@@ -2,7 +2,7 @@
  * @Author: gaocong 
  * @Date: 2018-07-26 10:53:33 
  * @Last Modified by: gaocong
- * @Last Modified time: 2018-07-26 14:50:26
+ * @Last Modified time: 2018-07-26 16:05:39
  */
 
 const path = require('path');
@@ -35,6 +35,14 @@ var config = {
     },
     externals: {
         'jquery': "window.jquery"
+    }, 
+    resolve: {
+        alias:{
+            util    :__dirname+'/src/util',
+            page    :__dirname+'/src/page',
+            service :__dirname+'/src/service',
+            image   :__dirname+'/src/image',
+        }
     },
     module: {
         rules: [{
