@@ -2,7 +2,7 @@
  * @Author: gaocong 
  * @Date: 2018-07-26 10:53:33 
  * @Last Modified by: gaocong
- * @Last Modified time: 2018-07-26 16:05:39
+ * @Last Modified time: 2018-07-30 16:06:19
  */
 
 const path = require('path');
@@ -38,10 +38,11 @@ var config = {
     }, 
     resolve: {
         alias:{
-            util    :__dirname+'/src/util',
-            page    :__dirname+'/src/page',
-            service :__dirname+'/src/service',
-            image   :__dirname+'/src/image',
+            util            :__dirname+'/src/util',
+            page            :__dirname+'/src/page',
+            service         :__dirname+'/src/service',
+            image           :__dirname+'/src/image',
+            node_modules    :__dirname+'/node_modules'
         }
     },
     module: {
