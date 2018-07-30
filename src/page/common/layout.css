@@ -2,7 +2,7 @@
  * @Author: gaocong 
  * @Date: 2018-07-27 15:07:56 
  * @Last Modified by: gaocong
- * @Last Modified time: 2018-07-30 15:48:46
+ * @Last Modified time: 2018-07-30 23:10:33
  */
 
 /* css reset */
@@ -84,6 +84,7 @@ input[type='checkbox'] {
     background: #c60023;
     font-size: 17px;
     font-weight: bold;
+    color: #ddd;
     outline: none;
     cursor: pointer;
     text-decoration: none;

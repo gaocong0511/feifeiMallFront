@@ -2,18 +2,22 @@
  * @Author: gaocong 
  * @Date: 2018-07-30 19:05:21 
  * @Last Modified by: gaocong
- * @Last Modified time: 2018-07-30 19:43:07
+ * @Last Modified time: 2018-07-30 23:11:55
  */
 'use strict';
 require('./index.css');
-var header={
-    init:function(){
+var mall=require('util/mall.js');
+//通用页面的头部
+var header = {
+    init: function () {
         this.bindEvents();
-        return this;
     },
-    bindEvents:function(){
-        
+    onLoad:function(){
+
+    },
+    bindEvents: function () {
+
     }
 };
 
-module.exports=header.init;
+header.init; 

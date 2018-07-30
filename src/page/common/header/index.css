@@ -1,6 +1,37 @@
 /*
  * @Author: gaocong 
  * @Date: 2018-07-30 19:05:46 
- * @Last Modified by:   gaocong 
- * @Last Modified time: 2018-07-30 19:05:46 
+ * @Last Modified by: gaocong
+ * @Last Modified time: 2018-07-30 23:04:43
  */
+
+ /*头部导航的样式*/
+ .header .logo{
+     position: absolute;
+     display: block;
+     left: 80px;
+     top: 34px;
+     font-size: 36px;
+     color: #c60023;
+     font-weight: bold;
+ }
+
+ .header .search-content{
+     padding: 40px 0 30px 250px;
+ }
+
+ /*设置搜索输入框的样式*/
+ .header .search-content .search-input{
+     width: 550px;
+     height: 40px;
+     line-height: 40px;
+     padding-left: 10px;
+     font-size: 15px;
+     border: 2px solid #c60023;
+ }
+
+ .header .search-content .search-btn{
+     position: absolute;
+     height: 44px;
+     width: 80px;
+ }
