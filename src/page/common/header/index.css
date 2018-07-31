@@ -2,7 +2,7 @@
  * @Author: gaocong 
  * @Date: 2018-07-30 19:05:46 
  * @Last Modified by: gaocong
- * @Last Modified time: 2018-07-30 23:04:43
+ * @Last Modified time: 2018-07-31 10:23:23
  */
 
  /*头部导航的样式*/
@@ -28,6 +28,7 @@
      padding-left: 10px;
      font-size: 15px;
      border: 2px solid #c60023;
+     outline: none;
  }
 
  .header .search-content .search-btn{

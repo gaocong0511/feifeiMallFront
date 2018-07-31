@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>mall</title>
@@ -7,7 +7,12 @@
 </head>
 
 <body>
+    <%= require('html-loader!./layout/nav.html')%>
     <%= require('html-loader!./layout/header.html')%>
+    <div class="page-wrap w">
+     <%= require('html-loader!./layout/nav-side.html')%>
+     <div class="content with-nav">test</div>
+    </div>
     <%= require('html-loader!./layout/footer.html')%>
 </body>
 

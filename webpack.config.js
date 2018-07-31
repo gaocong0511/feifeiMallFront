@@ -2,7 +2,7 @@
  * @Author: gaocong 
  * @Date: 2018-07-26 10:53:33 
  * @Last Modified by: gaocong
- * @Last Modified time: 2018-07-30 16:06:19
+ * @Last Modified time: 2018-07-31 15:51:14
  */
 
 const path = require('path');
@@ -11,10 +11,11 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
 //获取html-webpack-plugin的方法
-var getHtmlConfig = function (name) {
+var getHtmlConfig = function (name,title) {
     return {
         template: './src/view/' + name + '.html',
         filename: 'view/' + name + '.html',
+        title:title,
         inject: true,
         hash: true,
         chunks: ['common', name]
@@ -27,6 +28,7 @@ var config = {
         common: ['./src/page/common/index.js'],
         index: ['./src/page/index/index.js'],
         login: ['./src/page/login/index.js'],
+        result: ['./src/page/result/index.js'],
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -61,8 +63,9 @@ var config = {
         //css单独打包
         new ExtractTextPlugin("css/[name].css"),
         //Html模板处理
-        new HtmlWebpackPlugin(getHtmlConfig('index')),
-        new HtmlWebpackPlugin(getHtmlConfig('login')),
+        new HtmlWebpackPlugin(getHtmlConfig('index','首页')),
+        new HtmlWebpackPlugin(getHtmlConfig('login','用户登录')),
+        new HtmlWebpackPlugin(getHtmlConfig('result','操作结果')),
 
     ],
     optimization: {
