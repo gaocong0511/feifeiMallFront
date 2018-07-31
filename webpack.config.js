@@ -2,7 +2,7 @@
  * @Author: gaocong 
  * @Date: 2018-07-26 10:53:33 
  * @Last Modified by: gaocong
- * @Last Modified time: 2018-07-31 15:51:14
+ * @Last Modified time: 2018-07-31 19:25:06
  */
 
 const path = require('path');
@@ -27,7 +27,7 @@ var config = {
     entry: {
         common: ['./src/page/common/index.js'],
         index: ['./src/page/index/index.js'],
-        login: ['./src/page/login/index.js'],
+        login: ['./src/page/user-login/index.js'],
         result: ['./src/page/result/index.js'],
     },
     output: {
@@ -64,7 +64,7 @@ var config = {
         new ExtractTextPlugin("css/[name].css"),
         //Html模板处理
         new HtmlWebpackPlugin(getHtmlConfig('index','首页')),
-        new HtmlWebpackPlugin(getHtmlConfig('login','用户登录')),
+        new HtmlWebpackPlugin(getHtmlConfig('user-login','用户登录')),
         new HtmlWebpackPlugin(getHtmlConfig('result','操作结果')),
 
     ],

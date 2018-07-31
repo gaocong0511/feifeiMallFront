@@ -2,7 +2,7 @@
  * @Author: gaocong 
  * @Date: 2018-07-26 15:34:43 
  * @Last Modified by: gaocong
- * @Last Modified time: 2018-07-30 15:15:39
+ * @Last Modified time: 2018-07-31 19:26:26
  */
 'use strict'
 //引入hogan
@@ -88,7 +88,7 @@ var _mall = {
     },
     //统一登陆处理
     doLogin: function () {
-        window.location.href = './login.html?redirect= ' + encodeURIComponent(window.location.href);
+        window.location.href = './user-login.html?redirect= ' + encodeURIComponent(window.location.href);
     },
     //跳转回主页
     goHome:function(){
