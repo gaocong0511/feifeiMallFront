@@ -4,3 +4,5 @@
 /.vscode/
 /typings/
 jsconfig.json
+*.iml
+/.idea/

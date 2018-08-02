@@ -2,14 +2,14 @@
  * @Author: gaocong 
  * @Date: 2018-07-26 10:53:33 
  * @Last Modified by: gaocong
- * @Last Modified time: 2018-07-31 19:25:06
+ * @Last Modified time: 2018-08-01 09:00:39
  */
 
-const path = require('path');
+var path = require('path');
 var webpack = require('webpack');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
 //获取html-webpack-plugin的方法
 var getHtmlConfig = function (name,title) {
     return {
@@ -22,13 +22,13 @@ var getHtmlConfig = function (name,title) {
     };
 }
 
-//webpacjde 
+//webpackde
 var config = {
     entry: {
-        common: ['./src/page/common/index.js'],
-        index: ['./src/page/index/index.js'],
-        login: ['./src/page/user-login/index.js'],
-        result: ['./src/page/result/index.js'],
+        'common': ['./src/page/common/index.js'],
+        'index': ['./src/page/index/index.js'],
+        'user-login': ['./src/page/user-login/index.js'],
+        'result': ['./src/page/result/index.js'],
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -56,7 +56,7 @@ var config = {
                 use: "css-loader"
             })
         }, { test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=100&name=resource/[name].[ext]' },
-        { test: /\.string$/, loader: 'html-loader' },
+        { test: /\.string$/, loader: 'html-loader' }
         ]
     },
     plugins: [
