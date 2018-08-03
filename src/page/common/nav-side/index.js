@@ -15,19 +15,19 @@ var navSide = {
         navList: [{
             name: 'user-center',
             desc: '个人中心',
-            herf: './user-center.html'
+            href: './user-center.html'
         }, {
             name: 'order-list',
             desc: '我的订单',
-            herf: './order-list.html'
+            href: './order-list.html'
         }, {
             name: 'pass-update',
             desc: '修改密码',
-            herf: './pass-update.html'
+            href: './pass-update.html'
         }, {
             name: 'about',
             desc: '关于',
-            herf: './about.html'
+            href: './about.html'
         }]
     },
     init: function (option) {
@@ -41,7 +41,7 @@ var navSide = {
             if (this.option.navList[i].name === this.option.name) {
                 this.option.navList[i].isActive = true;
             }
-        };
+        }
         //渲染list数据
         var navHtml=mall.renderHtml(templateIndex,{
             navList:this.option.navList
@@ -49,6 +49,6 @@ var navSide = {
         //把html放入容器
         $('.nav-side').html(navHtml);
     }
-}
+};
 
 module.exports = navSide;

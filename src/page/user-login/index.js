@@ -12,10 +12,10 @@ require('./index.css');
 //统一错误处理的方法 提示表单里的错误信息
 var formError = {
     show: function (error) {
-        $('.error-item').show().find('.err-msg').text(error);
+        $('.error-item').show().find('.error-msg').text(error);
     },
     hide: function () {
-        $('.error-item').hide().find('.err-msg').text('');
+        $('.error-item').hide().find('.error-msg').text('');
     }
 };
 
@@ -66,11 +66,11 @@ var page = {
             status: false,
             msg: ''
         };
-        if (mall.validate(formData.username, 'require')) {
+        if (!mall.validate(formData.username, 'require')) {
             result.msg = '用户名不能为空';
             return result;
         }
-        if (mall.validate(formData.password, 'require')) {
+        if (!mall.validate(formData.password, 'require')) {
             result.msg = '密码不能为空';
             return result;
         }

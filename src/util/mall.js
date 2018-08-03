@@ -4,18 +4,19 @@
  * @Last Modified by: gaocong
  * @Last Modified time: 2018-07-31 19:26:26
  */
-'use strict'
+'use strict';
 //引入hogan
 var Hogan = require('hogan.js');
 
 var conf = {
-    serverHost: ''
-}
+    serverHost: 'http://127.0.0.1:8088'
+};
 
 var _mall = {
     //请求后台数据
     request: function (param) {
         var _this = this;
+        console.log(param.url);
         $.ajax({
             type: param.method || 'get',
             url: param.url || '',
@@ -23,7 +24,8 @@ var _mall = {
             data: param.data || '',
             success: function (res) {
                 //当发出的请求返回成功时
-                if (0 === res.status) {
+                console.log(res);
+                if (1 === res.status) {
                     typeof param.success === 'function' && param.success(res.data, res.msg)
                 }
                 //强制登陆 当前并没有登陆
@@ -31,7 +33,7 @@ var _mall = {
                     _this.doLogin();
                 }
                 //参数错误
-                else if (1 === res.status) {
+                else if (0 === res.status) {
                     typeof param.error === 'function' && param.error(res.msg)
                 }
             },

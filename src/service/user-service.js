@@ -49,7 +49,7 @@ var _user = {
             success: resolve,
             error: reject
         });
-    },
+    }
 }
 
 module.exports = _user;

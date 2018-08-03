@@ -14,4 +14,4 @@ $(function(){
     $element=$('.'+type+'-success');
     $element.show();
 
-})
+});
