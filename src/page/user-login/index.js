@@ -31,7 +31,8 @@ var page = {
             _this.submit();
         });
         //回车点击也进行提交
-        $('#user-content').keyup(function (e) {
+        $('.user-content').keyup(function (e) {
+            console.log(e.keyCode);
             if (e.keyCode === 13) {
                 _this.submit();
             }
@@ -57,7 +58,7 @@ var page = {
         }
         //验证失败 弹出提示信息
         else {
-            alert(validateResult.msg);
+            formError.show(validateResult.msg);
         }
     },
     //表单验证

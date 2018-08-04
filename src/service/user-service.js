@@ -18,10 +18,10 @@ var _user = {
             error: reject
         });
     },
-    //检查用户名
+    //检查用户名是不是已经存在了
     checkUsername: function (username, resolve, reject) {
         _mall.request({
-            url: _mall.getServerUrl('/user/check-valid.do'),
+            url: _mall.getServerUrl('/user/checkValid.do'),
             data: {
                 type: 'username',
                 str: username

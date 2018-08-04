@@ -24,7 +24,6 @@ var _mall = {
             data: param.data || '',
             success: function (res) {
                 //当发出的请求返回成功时
-                console.log(res);
                 if (1 === res.status) {
                     typeof param.success === 'function' && param.success(res.data, res.msg)
                 }
@@ -72,20 +71,20 @@ var _mall = {
         alert(msg || '操作失败');
     },
     //对信息进行验证 值 验证的类型 支持非空 手机 邮箱
-    validate:function(value,type){
+    validate:function(str,type){
         //去掉前后空格
-        var value=$.trim(value);
+        str=$.trim(str);
         //进行非空验证
         if('require'===type){
-            return !!value;
+            return !!str;
         }
         //手机号验证
         if('phone'===type){
-            return /^\d{10}$/.test(value);
+            return /^\d{11}$/.test(str);
         }
         //邮箱验证
         if('mail'===type){
-            return /^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/.test(value);
+            return /^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$/.test(str);
         }
     },
     //统一登陆处理
