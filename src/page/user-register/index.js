@@ -29,6 +29,10 @@ var page = {
         //验证username是不是已经存在了的事件
         $('#username').blur(function () {
             var username = $.trim($(this).val());
+            //仅在输入有长度的用户名的时候进行验证
+            if(!username){
+                return;
+            }
             _user.checkUsername(username, function (res) {
                 formError.hide();
             }, function (error) {
