@@ -25,7 +25,5 @@ var nav={
     loadUserInfo:function(){
 
     },
-    loadUserInfo:function(){
-        
-    }
+
 }

@@ -32,7 +32,6 @@ var page = {
         });
         //回车点击也进行提交
         $('.user-content').keyup(function (e) {
-            console.log(e.keyCode);
             if (e.keyCode === 13) {
                 _this.submit();
             }
