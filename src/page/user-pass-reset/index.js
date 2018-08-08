@@ -21,6 +21,12 @@ var formError = {
 
 //page 逻辑部分
 var page = {
+    data: {
+        username: '',
+        question: '',
+        answer: '',
+        token: ''
+    },
     init: function () {
         //进入页面的时候把用户名的框给显示出来
         this.onLoad();
@@ -31,72 +37,88 @@ var page = {
     },
     //加载用户名容器
     loadStepUsername: function () {
-        $('#step-username').show();
+        $('.step-username').show();
     },
     //加载问题答案的容器
     loadStepQuestion: function () {
-        $('#step-username').hide();
-        $('#step-question').show();
+        formError.hide();
+        $('.step-username').hide()
+            .siblings('.step-question').show()
+            .find('.question').text(this.data.question);
     },
     //加载密码的容器
     loadStepPassword: function () {
-        $('#step-question').hide();
-        $('#step-password').show();
-
+        formError.hide();
+        $('.step-question').hide()
+            .siblings('.step-password').show();
     },
     bindEvents: function () {
         var _this = this;
         //点击登录按钮进行登录操作
-        $('#submit').click(function () {
-            _this.submit();
-        });
-        //回车点击也进行提交
-        $('.user-content').keyup(function (e) {
-            console.log(e.keyCode);
-            if (e.keyCode === 13) {
-                _this.submit();
+        $('#submit-username').click(function () {
+            var username = $.trim($('#username').val());
+            //如果用户名存在的话
+            if (username) {
+                _user.getQuestion(username,
+                    function (res) {
+                        _this.data.username = username;
+                        _this.data.question = res;
+                        _this.loadStepQuestion();
+                    },
+                    function (errMsg) {
+                        formError.show(errMsg);
+                    })
+            }
+            //如果用户名没有输入的话
+            else {
+                formError.show('请输入用户名');
             }
         });
-    },
-    //提交表单(实际上并没有表单)
-    submit: function () {
-        //验证填写是不是正确
-        var formData = {
-                username: $.trim($('#username').val()),
-                password: $.trim($('#password').val())
-            },
-            //表单数据的验证结果
-            validateResult = this.formValidate(formData)
-        //验证成功 直接提交
-        if (validateResult.status) {
-            _user.login(formData, function (res) {
-                window.location.href = mall.getUrlParam('redirect') || './index.html';
-                formError.hide();
-            }, function (error) {
-                formError.show(error);
-            })
-        }
-        //验证失败 弹出提示信息
-        else {
-            formError.show(validateResult.msg);
-        }
-    },
-    //表单验证
-    formValidate: function (formData) {
-        var result = {
-            status: false,
-            msg: ''
-        };
-        if (!mall.validate(formData.username, 'require')) {
-            result.msg = '用户名不能为空';
-            return result;
-        }
-        if (!mall.validate(formData.password, 'require')) {
-            result.msg = '密码不能为空';
-            return result;
-        }
-        result.status = true;
-        return result;
+
+        //输入密码提示问题答案中的按钮被点击时
+        $('#submit-question').click(function () {
+            var answer = $.trim($('#answer').val());
+            //如果已经输入了问题的答案的话
+            if (answer) {
+                _user.checkAnswer({
+                    username: _this.data.username,
+                    question: _this.data.question,
+                    answer: answer
+                }, function (res) {
+                    _this.data.answer = answer;
+                    _this.data.token = res;
+                    _this.loadStepPassword();
+                }, function (errMsg) {
+                    formError.show(errMsg);
+                })
+            }
+            //如果没有输入用户名的话
+            else {
+                formError.show('请输入密码提示问题的答案');
+            }
+        });
+
+        //输入新密码后按钮点击之后进行密码重置
+        $('#submit-password').click(function () {
+            var password = $.trim($('#password').val());
+            //如果已经输入了密码的话  并且密码的长度是大于6位的
+            if (password && password.length >= 6) {
+                _user.resetPassword({
+                    username: _this.data.username,
+                    passwordNew: password,
+                    forgetToken: _this.data.token
+                }, function (res) {
+                    window.location.href = './result.html?type=pass-reset';
+                }, function (errMsg) {
+                    formError.show(errMsg);
+                })
+            }
+            //密码不符合规范或者密码的长度不够长的话
+            else {
+                formError.show('请输入不少于6位的新密码');
+            }
+        });
+
     }
 };
 

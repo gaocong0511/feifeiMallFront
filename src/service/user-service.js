@@ -49,7 +49,38 @@ var _user = {
             success: resolve,
             error: reject
         });
-    }
-}
+    },
+    //用户重置密码的时候根据用户名获得用户的密码提示问题
+    getQuestion: function (username, resolve, reject) {
+        _mall.request({
+            url: _mall.getServerUrl('/user/forget_get_question.do'),
+            data: {
+                username: username
+            },
+            method: 'POST',
+            success: resolve,
+            error: reject
+        })
+    },
+    //检查用户的密码提示问题的答案是不是正确
+    checkAnswer:function (userInfo,resolve,reject) {
+        _mall.request({
+            url: _mall.getServerUrl('/user/check_answer.do'),
+            data: userInfo,
+            method: 'POST',
+            success: resolve,
+            error: reject
+        })
+    },
+    resetPassword:function (userInfo,resolve,reject) {
+        _mall.request({
+            url: _mall.getServerUrl('/user/forget_reset_password.do'),
+            data: userInfo,
+            method: 'POST',
+            success: resolve,
+            error: reject
+        })
+    },
+};
 
 module.exports = _user;
