@@ -63,7 +63,7 @@ var _user = {
         })
     },
     //检查用户的密码提示问题的答案是不是正确
-    checkAnswer:function (userInfo,resolve,reject) {
+    checkAnswer: function (userInfo, resolve, reject) {
         _mall.request({
             url: _mall.getServerUrl('/user/check_answer.do'),
             data: userInfo,
@@ -72,7 +72,8 @@ var _user = {
             error: reject
         })
     },
-    resetPassword:function (userInfo,resolve,reject) {
+    //将用户的密码进行重置
+    resetPassword: function (userInfo, resolve, reject) {
         _mall.request({
             url: _mall.getServerUrl('/user/forget_reset_password.do'),
             data: userInfo,
@@ -81,6 +82,16 @@ var _user = {
             error: reject
         })
     },
+    //获取当前登录用户的个人信息
+    getUserInfo: function (resolve, reject) {
+        _mall.request({
+            url: _mall.getServerUrl('/user/get_user_info.do'),
+            method: 'POST',
+            success: resolve,
+            error: reject
+        });
+    }
+
 };
 
 module.exports = _user;

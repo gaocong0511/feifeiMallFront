@@ -93,7 +93,7 @@ var _mall = {
     },
     //跳转回主页
     goHome:function(){
-        window.location.href='./index.html'
+        window.location.href='./index.string'
     }
 };
 

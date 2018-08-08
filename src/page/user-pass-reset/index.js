@@ -5,7 +5,6 @@
  * @Last Modified time: 2018-08-01 17:12:33
  */
 'use strict';
-var mall = require('util/mall.js');
 var _user = require('service/user-service.js');
 require('page/common/nav-simple/index.js');
 require('./index.css');
