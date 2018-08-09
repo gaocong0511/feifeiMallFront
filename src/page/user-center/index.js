@@ -5,7 +5,7 @@ require('page/common/nav/index.js');
 require('page/common/header/index.js');
 var _mall = require('util/mall');
 var _user = require('service/user-service.js');
-var navSide = require('page/common/nav-side/index');
+var navSide = require('page/common/nav-side/index.js');
 var template = require('./index.string');
 
 //用户个人信息界面的页面逻辑部分

@@ -42,7 +42,7 @@ var _user = {
         });
     },
     //检查登录状态
-    checkLogin: function (userInfo, resolve, reject) {
+    checkLogin: function (resolve, reject) {
         _mall.request({
             url: _mall.getServerUrl('/user/get_user_info.do'),
             method: 'POST',
@@ -90,6 +90,25 @@ var _user = {
             success: resolve,
             error: reject
         });
+    },
+    //当前登录了的用户退出登录
+    logout: function (resolve, reject) {
+        _mall.request({
+            url: _mall.getServerUrl('/user/logout.do'),
+            method: 'POST',
+            success: resolve,
+            error: reject
+        })
+    },
+    //更新用户信息
+    updateUserInfo:function (userInfo,resolve,reject) {
+        _mall.request({
+            url: _mall.getServerUrl('/user/update_information.do'),
+            method: 'POST',
+            data:userInfo,
+            success: resolve,
+            error: reject
+        })
     }
 
 };

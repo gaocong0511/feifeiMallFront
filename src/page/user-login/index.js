@@ -49,7 +49,7 @@ var page = {
         //验证成功 直接提交
         if (validateResult.status) {
             _user.login(formData, function (res) {
-                window.location.href = mall.getUrlParam('redirect') || './index.string';
+                window.location.href = mall.getUrlParam('redirect') || './index.html';
                 formError.hide();
             }, function (error) {
                 formError.show(error);
