@@ -109,8 +109,17 @@ var _user = {
             success: resolve,
             error: reject
         })
-    }
-
+    },
+    //当用户登录的时候进行密码的更新
+    updatePassword:function (userInfo,resolve,reject) {
+        _mall.request({
+            url: _mall.getServerUrl('/user/reset_password.do'),
+            method: 'POST',
+            data:userInfo,
+            success: resolve,
+            error: reject
+        })
+    },
 };
 
 module.exports = _user;
