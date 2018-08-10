@@ -1,5 +1,98 @@
-body{
-    background: #ccc;
-    color: red;
-    font-size: 100px;
+/* 关键词列表的样式*/
+.keywords-list{
+    float: left;
+    width: 240px;
+    height: 350px;
+    padding: 10px 0;
+    margin-right: 10px;
+    background: #666;
+    color: #fff;
+}
+
+/*每一行关键词的样式(一行有多个关键词)*/
+.keywords-list .keywords-item{
+    padding-left: 10px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+}
+
+/*当鼠标移动到导航的某一行之上时  修改一下颜色*/
+.keywords-list .keywords-item:hover{
+    background: #999;
+}
+
+/*每一个关键词的样式*/
+.keywords-list .keywords-item .link{
+    margin-right: 6px;
+    color: #fff;
+}
+/*每个关键词获得鼠标焦点时的样式 */
+.keywords-list .keywords-item .link{
+    margin-right: 6px;
+    color: #fff;
+}
+
+/* 循环图片展示框区域 */
+.banner-con{
+    width: 830px;
+    float: left;
+    height: 370px;
+    background: #eee;
+}
+
+/*还没有加载完成的时候loading图片的显示样式*/
+.banner-con .loading{
+    margin-top: 150px;
+}
+
+/*底部分类导航区的样式 标的的样式*/
+.floor-wrap .floor-title{
+    height: 50px;
+    line-height: 50px;
+    color: #d58717;
+    font-weight: normal;
+    font-size: 20px;
+    border-bottom: 1px solid #d58717;
+}
+
+/*更改各楼层标题的颜色*/
+/*第二层的样式*/
+.floor-wrap:nth-child(2) .floor-title{
+    color: #3b838c;
+    border-bottom: 1px solid #3b838c;
+}
+/*第三层的样式*/
+.floor-wrap:nth-child(3) .floor-title{
+    color: #a93931;
+    border-bottom: 1px solid #a93931;
+}
+
+/*第4层的样式*/
+.floor-wrap:nth-child(4) .floor-title{
+    color: #488bad;
+    border-bottom: 1px solid #488bad;
+}
+
+/*第5层的样式*/
+.floor-wrap:nth-child(5) .floor-title{
+    color: #642663;
+    border-bottom: 1px solid #642663;
+}
+
+/*向右偏移-20px避免超出边界*/
+.floor-wrap .floor-list{
+    margin-right: -20px;
+    overflow: hidden;
+}
+
+/*每个显示按钮的*/
+.floor-wrap .floor-list .floor-item{
+    position: relative;
+    width: 200px;
+    height: 220px;
+    margin: 15px 20px 15px 0;
+    float: left;
+    cursor: pointer;
+    background: #fff;
 }
