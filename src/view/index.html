@@ -7,16 +7,287 @@
 </head>
 
 <body>
-    <%= require('html-loader!./layout/nav.html')%>
-    <%= require('html-loader!./layout/header.html')%>
-    <div class="w">
-        <ul class="keywords-list">
-            <li class="keywords-item">
-                <a href="./list.html?keyword=手机" class="link">手机</a>
+<%= require('html-loader!./layout/nav.html')%>
+<%= require('html-loader!./layout/header.html')%>
+<div class="w">
+    <ul class="keywords-list">
+        <li class="keywords-item">
+            <a href="./list.html?keyword=手机" class="link" target="_blank">手机</a>
+            <a href="./list.html?keyword=平板" class="link" target="_blank">平板</a>
+            <a href="./list.html?keyword=掌机" class="link" target="_blank">掌机</a>
+            <a href="./list.html?keyword=游戏机" class="link" target="_blank">游戏机</a>
+        </li>
+        <li class="keywords-item">
+            <a href="./list.html?keyword=笔记本电脑" class="link" target="_blank">笔记本电脑</a>
+            <a href="./list.html?keyword=台式机" class="link" target="_blank">台式机</a>
+            <a href="./list.html?keyword=电脑配件" class="link" target="_blank">电脑配件</a>
+        </li>
+        <li class="keywords-item">
+            <a href="./list.html?keyword=电视" class="link" target="_blank">电视</a>
+            <a href="./list.html?keyword=冰箱" class="link" target="_blank">冰箱</a>
+            <a href="./list.html?keyword=空调" class="link" target="_blank">空调</a>
+            <a href="./list.html?keyword=洗衣机" class="link" target="_blank">洗衣机</a>
+        </li>
+        <li class="keywords-item">
+            <a href="./list.html?keyword=厨卫" class="link" target="_blank">厨卫</a>
+            <a href="./list.html?keyword=小电器" class="link" target="_blank">小电器</a>
+            <a href="./list.html?keyword=智能家居" class="link" target="_blank">智能家居</a>
+        </li>
+        <li class="keywords-item">
+            <a href="./list.html?keyword=玩具" class="link" target="_blank">玩具</a>
+            <a href="./list.html?keyword=童装" class="link" target="_blank">童装</a>
+            <a href="./list.html?keyword=益智" class="link" target="_blank">益智</a>
+        </li>
+        <li class="keywords-item">
+            <a href="./list.html?keyword=鞋类" class="link" target="_blank">鞋类</a>
+            <a href="./list.html?keyword=箱包" class="link" target="_blank">箱包</a>
+            <a href="./list.html?keyword=旅行箱" class="link" target="_blank">旅行箱</a>
+        </li>
+        <li class="keywords-item">
+            <a href="./list.html?keyword=图书" class="link" target="_blank">图书</a>
+            <a href="./list.html?keyword=音像" class="link" target="_blank">音像</a>
+            <a href="./list.html?keyword=电子书" class="link" target="_blank">电子书</a>
+        </li>
+    </ul>
+    <!--轮播区域 banner-->
+    <div class="banner-con">
+        <div class="loading"></div>
+    </div>
+</div>
+
+<!--图片导航区-->
+<div class="w">
+    <!--第一层-->
+    <div class="floor-wrap">
+        <h1 class="floor-title">家用电器</h1>
+        <ul class="floor-list">
+            <li class="floor-item">
+                <a href="./list.html?categoryId=100006">
+                    <span class="floor-text">冰箱</span>
+                    <img src="https://blogimageserver-1251756723.cos.ap-shanghai.myqcloud.com/mall/floor/floor1-1.jpg"
+                         alt="冰箱" class="floor-img">
+                </a>
+            </li>
+
+            <li class="floor-item">
+                <a href="./list.html?categoryId=100007">
+                    <span class="floor-text">电视</span>
+                    <img src="https://blogimageserver-1251756723.cos.ap-shanghai.myqcloud.com/mall/floor/floor1-2.jpg"
+                         alt="电视" class="floor-img">
+                </a>
+            </li>
+
+            <li class="floor-item">
+                <a href="./list.html?categoryId=100008">
+                    <span class="floor-text">洗衣机</span>
+                    <img src="https://blogimageserver-1251756723.cos.ap-shanghai.myqcloud.com/mall/floor/floor1-3.jpg"
+                         alt="洗衣机" class="floor-img">
+                </a>
+            </li>
+
+            <li class="floor-item">
+                <a href="./list.html?categoryId=100009">
+                    <span class="floor-text">空调</span>
+                    <img src="https://blogimageserver-1251756723.cos.ap-shanghai.myqcloud.com/mall/floor/floor1-4.jpg"
+                         alt="空调" class="floor-img">
+                </a>
+            </li>
+
+            <li class="floor-item">
+                <a href="./list.html?categoryId=100010">
+                    <span class="floor-text">热水器</span>
+                    <img src="https://blogimageserver-1251756723.cos.ap-shanghai.myqcloud.com/mall/floor/floor1-5.jpg"
+                         alt="热水器" class="floor-img">
+                </a>
             </li>
         </ul>
     </div>
-    <%= require('html-loader!./layout/footer.html')%>
+    <!--第二层-->
+    <div class="floor-wrap">
+        <h1 class="floor-title">数码3C</h1>
+        <ul class="floor-list">
+            <li class="floor-item">
+                <a href="./list.html?categoryId=100011">
+                    <span class="floor-text">电脑</span>
+                    <img src="https://blogimageserver-1251756723.cos.ap-shanghai.myqcloud.com/mall/floor/floor2-1.jpg"
+                         alt="冰箱" class="floor-img">
+                </a>
+            </li>
+
+            <li class="floor-item">
+                <a href="./list.html?categoryId=100012">
+                    <span class="floor-text">手机</span>
+                    <img src="https://blogimageserver-1251756723.cos.ap-shanghai.myqcloud.com/mall/floor/floor2-2.jpg"
+                         alt="手机" class="floor-img">
+                </a>
+            </li>
+
+            <li class="floor-item">
+                <a href="./list.html?categoryId=100013">
+                    <span class="floor-text">平板电脑</span>
+                    <img src="https://blogimageserver-1251756723.cos.ap-shanghai.myqcloud.com/mall/floor/floor2-3.jpg"
+                         alt="平板电脑" class="floor-img">
+                </a>
+            </li>
+
+            <li class="floor-item">
+                <a href="./list.html?categoryId=100014">
+                    <span class="floor-text">相机</span>
+                    <img src="https://blogimageserver-1251756723.cos.ap-shanghai.myqcloud.com/mall/floor/floor2-4.jpg"
+                         alt="相机" class="floor-img">
+                </a>
+            </li>
+
+            <li class="floor-item">
+                <a href="./list.html?categoryId=100015">
+                    <span class="floor-text">3c配件</span>
+                    <img src="https://blogimageserver-1251756723.cos.ap-shanghai.myqcloud.com/mall/floor/floor2-5.jpg"
+                         alt="3c配件" class="floor-img">
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!--第三层-->
+    <div class="floor-wrap">
+        <h1 class="floor-title">服装箱包</h1>
+        <ul class="floor-list">
+            <li class="floor-item">
+                <a href="./list.html?categoryId=100016">
+                    <span class="floor-text">女装</span>
+                    <img src="https://blogimageserver-1251756723.cos.ap-shanghai.myqcloud.com/mall/floor/floor3-1.jpg"
+                         alt="女装" class="floor-img">
+                </a>
+            </li>
+
+            <li class="floor-item">
+                <a href="./list.html?categoryId=100017">
+                    <span class="floor-text">帽子</span>
+                    <img src="https://blogimageserver-1251756723.cos.ap-shanghai.myqcloud.com/mall/floor/floor3-2.jpg"
+                         alt="帽子" class="floor-img">
+                </a>
+            </li>
+
+            <li class="floor-item">
+                <a href="./list.html?categoryId=100018">
+                    <span class="floor-text">旅行箱</span>
+                    <img src="https://blogimageserver-1251756723.cos.ap-shanghai.myqcloud.com/mall/floor/floor3-3.jpg"
+                         alt="旅行箱" class="floor-img">
+                </a>
+            </li>
+
+            <li class="floor-item">
+                <a href="./list.html?categoryId=100019">
+                    <span class="floor-text">手提包</span>
+                    <img src="https://blogimageserver-1251756723.cos.ap-shanghai.myqcloud.com/mall/floor/floor3-4.jpg"
+                         alt="手提包" class="floor-img">
+                </a>
+            </li>
+
+            <li class="floor-item">
+                <a href="./list.html?categoryId=100020">
+                    <span class="floor-text">保暖内衣</span>
+                    <img src="https://blogimageserver-1251756723.cos.ap-shanghai.myqcloud.com/mall/floor/floor3-5.jpg"
+                         alt="保暖内衣" class="floor-img">
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!--第四层-->
+    <div class="floor-wrap">
+        <h1 class="floor-title">食品生鲜</h1>
+        <ul class="floor-list">
+            <li class="floor-item">
+                <a href="./list.html?categoryId=100021">
+                    <span class="floor-text">零食</span>
+                    <img src="https://blogimageserver-1251756723.cos.ap-shanghai.myqcloud.com/mall/floor/floor4-1.jpg"
+                         alt="零食" class="floor-img">
+                </a>
+            </li>
+
+            <li class="floor-item">
+                <a href="./list.html?categoryId=100022">
+                    <span class="floor-text">生鲜</span>
+                    <img src="https://blogimageserver-1251756723.cos.ap-shanghai.myqcloud.com/mall/floor/floor4-2.jpg"
+                         alt="生鲜" class="floor-img">
+                </a>
+            </li>
+
+            <li class="floor-item">
+                <a href="./list.html?categoryId=100023">
+                    <span class="floor-text">半成品</span>
+                    <img src="https://blogimageserver-1251756723.cos.ap-shanghai.myqcloud.com/mall/floor/floor4-3.jpg"
+                         alt="半成品" class="floor-img">
+                </a>
+            </li>
+
+            <li class="floor-item">
+                <a href="./list.html?categoryId=100024">
+                    <span class="floor-text">速冻</span>
+                    <img src="https://blogimageserver-1251756723.cos.ap-shanghai.myqcloud.com/mall/floor/floor4-4.jpg"
+                         alt="速冻" class="floor-img">
+                </a>
+            </li>
+
+            <li class="floor-item">
+                <a href="./list.html?categoryId=100025">
+                    <span class="floor-text">进口食品</span>
+                    <img src="https://blogimageserver-1251756723.cos.ap-shanghai.myqcloud.com/mall/floor/floor4-5.jpg"
+                         alt="进口食品" class="floor-img">
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!--第五层-->
+    <div class="floor-wrap">
+        <h1 class="floor-title">酒水饮料</h1>
+        <ul class="floor-list">
+            <li class="floor-item">
+                <a href="./list.html?categoryId=100026">
+                    <span class="floor-text">白酒</span>
+                    <img src="https://blogimageserver-1251756723.cos.ap-shanghai.myqcloud.com/mall/floor/floor5-1.jpg"
+                         alt="白酒" class="floor-img">
+                </a>
+            </li>
+
+            <li class="floor-item">
+                <a href="./list.html?categoryId=100027">
+                    <span class="floor-text">红酒</span>
+                    <img src="https://blogimageserver-1251756723.cos.ap-shanghai.myqcloud.com/mall/floor/floor5-2.jpg"
+                         alt="红酒" class="floor-img">
+                </a>
+            </li>
+
+            <li class="floor-item">
+                <a href="./list.html?categoryId=100028">
+                    <span class="floor-text">饮料</span>
+                    <img src="https://blogimageserver-1251756723.cos.ap-shanghai.myqcloud.com/mall/floor/floor5-3.jpg"
+                         alt="饮料" class="floor-img">
+                </a>
+            </li>
+
+            <li class="floor-item">
+                <a href="./list.html?categoryId=100029">
+                    <span class="floor-text">鸡尾酒</span>
+                    <img src="https://blogimageserver-1251756723.cos.ap-shanghai.myqcloud.com/mall/floor/floor5-4.jpg"
+                         alt="鸡尾酒" class="floor-img">
+                </a>
+            </li>
+
+            <li class="floor-item">
+                <a href="./list.html?categoryId=100030">
+                    <span class="floor-text">洋酒</span>
+                    <img src="https://blogimageserver-1251756723.cos.ap-shanghai.myqcloud.com/mall/floor/floor5-5.jpg"
+                         alt="洋酒" class="floor-img">
+                </a>
+            </li>
+        </ul>
+    </div>
+
+</div>
+<%= require('html-loader!./layout/footer.html')%>
 </body>
 
 </html>

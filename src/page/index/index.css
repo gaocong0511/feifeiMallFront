@@ -33,6 +33,10 @@
     color: #fff;
 }
 
+.keywords-list .keywords-item .link:hover{
+    color: #c60023;
+}
+
 /* 循环图片展示框区域 */
 .banner-con{
     width: 830px;
@@ -46,6 +50,38 @@
     margin-top: 150px;
 }
 
+.banner-con .banner-img{
+    width: 100%;
+    height: 370px;
+}
+
+/*banner的前一张和后一张按钮*/
+.banner-con .banner-arrow{
+    position: absolute;
+    top: 160px;
+    width: 30px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
+    background: #ccc;
+    background: rgba(0,0,0,.2);
+    cursor: pointer;
+}
+
+.banner-con .banner-arrow:hover{
+    background: #aaa;
+    background: rgba(0,0,0,.5);
+}
+
+.banner-con .banner-arrow.prev{
+    left: 0;
+}
+
+.banner-con .banner-arrow.next{
+    right: 0;
+}
 /*底部分类导航区的样式 标的的样式*/
 .floor-wrap .floor-title{
     height: 50px;
