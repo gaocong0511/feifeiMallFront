@@ -23,7 +23,7 @@ var Pagination=function () {
             _this.option.onscroll($this.data('value')):null;
     });
 };
-Pagination.prototype.onSelectPage.render=function(userOption){
+Pagination.prototype.render=function(userOption){
     //extend   将两个或更多对象的内容合并到第一个对象。
     this.option=$.extend({},this.defaultOption,userOption);
 
