@@ -20,7 +20,7 @@ var Pagination=function () {
             return;
         }
         typeof _this.option.onSelectPage==='function'?
-            _this.option.onscroll($this.data('value')):null;
+            _this.option.onSelectPage($this.data('value')):null;
     });
 };
 Pagination.prototype.render=function(userOption){
@@ -43,10 +43,10 @@ Pagination.prototype.render=function(userOption){
 
 //生成分页控件的html代码
 Pagination.prototype.getPaginationHtml=function(){
-    var html='',
+    var html,
         option=this.option,
         pageArray=[],
-        start=option.pageNum=option.pageRange>0 ? option.pageNum-option.pageRange:1,
+        start=option.pageNum-option.pageRange>0 ? option.pageNum-option.pageRange:1,
         end=option.pageNum+option.pageRange<option.pages?option.pageNum+option.pageRange:option.pages;
 
     //上一页按钮

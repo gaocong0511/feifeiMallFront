@@ -17,7 +17,7 @@ var page = {
             categoryId: _mall.getUrlParam('categoryId') || '',
             orderBy: _mall.getUrlParam('orderBy') || 'default',
             pageNum: _mall.getUrlParam('pageNum') || 1,
-            pageSize: _mall.getUrlParam('pageSize') || 20
+            pageSize: _mall.getUrlParam('pageSize') || 1
         }
     },
     init: function () {
@@ -77,11 +77,9 @@ var page = {
         listParam.categoryId ? (delete  listParam.keyWord) : (delete listParam.categoryId);
         //从服务器端请求数据
         _product.getProductList(listParam, function (res) {
-            console.log(res);
             listHtml = _mall.renderHtml(indexTemplate, {
                 list: res.list
             });
-            console.log(listHtml);
             $pListCon.html(listHtml);
             _this.loadPagination({
                 hasPreviousPage: res.hasPreviousPage,
