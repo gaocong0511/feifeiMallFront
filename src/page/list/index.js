@@ -17,7 +17,7 @@ var page = {
             categoryId: _mall.getUrlParam('categoryId') || '',
             orderBy: _mall.getUrlParam('orderBy') || 'default',
             pageNum: _mall.getUrlParam('pageNum') || 1,
-            pageSize: _mall.getUrlParam('pageSize') || 1
+            pageSize: _mall.getUrlParam('pageSize') || 20
         }
     },
     init: function () {
