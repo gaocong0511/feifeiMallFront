@@ -30,5 +30,19 @@
             <span class="p-count-btn plus">+</span>
             <span class="p-count-btn minus">-</span>
         </div>
+        <div class="p-info-item">
+            <a class="btn cart-btn"></a>
+        </div>
+    </div>
+</div>
+
+<div class="detail-wrap">
+    <div class="detail-tab-con">
+        <ul class="tab-list">
+            <li class="tab-item active">商品详情</li>
+        </ul>
+    </div>
+    <div class="detail-con">
+        {{{detail}}
     </div>
 </div>
