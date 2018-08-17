@@ -33,7 +33,7 @@ var page = {
         $('.sort-item').click(function () {
             var $this = $(this);
             //每次进行排序之后 将展示的页面置为1
-            _this.data.pageNum = 1;
+            _this.data.listParam.pageNum = 1;
             //当点击的是默认排序的时候
             if ($this.data('type') === 'default') {
                 //如果已经是active样式的话
@@ -57,10 +57,9 @@ var page = {
                     $this.addClass('asc').removeClass('desc');
                     _this.data.listParam.orderBy = 'price_asc';
                 } else {
-
-                }
                 $this.addClass('desc').removeClass('asc');
                 _this.data.listParam.orderBy = 'price_desc';
+                }
             }
 
             //点击完成并且完成界面相应之后重新加载列表

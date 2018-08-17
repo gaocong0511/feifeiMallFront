@@ -33,7 +33,7 @@ Pagination.prototype.render=function(userOption){
     }
 
     //判断是否只有一页
-    if(this.option.pages === 1){
+    if(this.option.pages <= 1){
         return;
     }
 

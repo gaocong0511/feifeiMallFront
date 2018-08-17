@@ -10,7 +10,7 @@ require('./index.css');
 
 var _mall = require("util/mall.js");
 var _user = require('service/user-service.js');
-/*var _cart=require('service/cart-service.js');*/
+var _cart=require('service/cart-service.js');
 
 var nav = {
     init: function () {
@@ -45,7 +45,11 @@ var nav = {
         });
     },
     loadCartCount: function () {
-
+        _cart.getCartCount(function (res) {
+            $('.nav .cart-count').text(res||0);
+        },function (errMsg) {
+            $('.nav .cart-count').text(0);
+        })
     }
 
 };

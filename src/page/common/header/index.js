@@ -11,6 +11,7 @@ var mall=require('util/mall.js');
 //通用页面的头部
 var header = {
     init: function () {
+        this.onLoad();
         this.bindEvents();
     },
     onLoad:function(){
@@ -45,4 +46,7 @@ var header = {
     }
 };
 
-header.init; 
+
+$(function () {
+    header.init();
+});
