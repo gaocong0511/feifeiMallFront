@@ -1,0 +1,49 @@
+/*地址部分的显示样式*/
+.address-item,
+.address-new {
+    float: left;
+    margin: 20px 20px 0 0;
+    padding: 10px;
+    width: 200px;
+    height: 80px;
+    border: 3px dashed #ccc;
+    cursor: pointer;
+}
+
+/*已经显示了的地址以及新增的地址鼠标悬停时的样式*/
+.address-item:hover,
+.address-new:hover {
+    background: #fafafa;
+}
+
+.address-item.active{
+    border: 3px dashed #c60023;
+}
+
+/*收货地址标题部分的显示样式*/
+.address-item .address-title{
+    padding-bottom: 3px;
+    border-bottom: 1px solid #ccc;
+    color: #666;
+}
+
+.address-item .address-detail{
+    margin-top: 5px;
+    height:36px;
+    overflow: hidden;
+    color: #666;
+}
+
+.address-item .address-opera{
+    text-align: right;
+}
+
+/*默认不显示删除和编辑地址的按钮  当鼠标悬停的时候进行展示*/
+.address-item .address-opera{
+    text-align: right;
+    visibility: hidden;
+}
+
+.address-item:hover .address-opera{
+    visibility: visible;
+}
