@@ -20,7 +20,7 @@ var getHtmlConfig = function (name, title) {
         hash: true,
         chunks: ['common', name]
     };
-}
+};
 
 //webpack的配置
 var config = {

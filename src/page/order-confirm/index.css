@@ -54,6 +54,10 @@
     padding: 10px 0;
 }
 
+.address-item .address-opera .link:hover{
+    color: #c60023;
+}
+
 /*新增地址部分的样式*/
 .address-add .address-new {
     text-align: center;
@@ -67,4 +71,69 @@
 }
 .address-add .address-new .text{
     font-size: 13px;
+}
+
+
+/*商品清单的样式*/
+.product-table{
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+
+.product-table th,td{
+    border-bottom: 1px dotted #ddd;
+}
+
+.product-table .cell-img{
+    width: 10%;
+    text-align: center;
+    padding: 10px;
+}
+
+.product-table .cell-img .p-img{
+    width: 80px;
+    height: 80px;
+    border: 1px solid #ddd;
+}
+
+.product-table .cell-info{
+    width: 30%;
+    text-align: left;
+}
+
+.product-table .cell-price{
+    width: 20%;
+    text-align: center;
+}
+
+.product-table .cell-count{
+    width: 20%;
+    text-align: center;
+}
+
+.product-table .cell-total{
+    width: 20%;
+    text-align: center;
+}
+
+/*提交订单相关部分的样式*/
+.submit-con{
+    background: #fafafa;
+    text-align: right;
+}
+
+.submit-con .submit-total{
+    font-size: 18px;
+    color: #c60023;
+    font-weight: bold;
+    vertical-align: middle;
+    margin-right: 20px;
+}
+
+.submit-con .order-submit{
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    width: 100px;
 }
