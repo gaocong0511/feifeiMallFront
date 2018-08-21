@@ -11,6 +11,15 @@ var _order={
             success:resolve,
             error:reject
         })
+    },
+    //提交当前购物车中的内容 进行订单的生成
+    createOrder:function (orderInfo,resolve,reject) {
+        _mall.request({
+            url:_mall.getServerUrl('/order/create.do'),
+            data:orderInfo,
+            success:resolve,
+            error:reject
+        })
     }
 };
 

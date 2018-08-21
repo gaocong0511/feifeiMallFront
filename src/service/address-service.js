@@ -13,6 +13,15 @@ var _address={
             success:resolve,
             error:reject
         })
+    },
+    //保存或者新增收货地址
+    save:function (addressInfo,resolve,reject) {
+    _mall.request({
+        url:_mall.getServerUrl('/shipping/add.do'),
+        data:addressInfo,
+        success:resolve,
+        error:reject
+    })
     }
 };
 
