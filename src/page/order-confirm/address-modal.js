@@ -30,25 +30,41 @@ var addressModal = {
 
         //点击保存按钮之后进行收货地址的提交(包括新增和更新)
         this.$modalWrap.find('.address-btn').click(function () {
-            var receiverInfo=_this.getReceiverInfo(),
-                isUpdate=_this.option.isUpdate;
-
+            var receiverInfo = _this.getReceiverInfo(),
+                isUpdate = _this.option.isUpdate;
+            console.log("123");
             //如果是新地址的话
-            if(!isUpdate&&receiverInfo.status){
-                _address.save(receiverInfo.data,function (res) {
+            if (!isUpdate && receiverInfo.status) {
+                _address.save(receiverInfo.data, function (res) {
                     _mall.successTips('地址添加成功');
                     _this.hide();
-                    typeof _this.option.onSuccess==='function'&&_this.option.onSuccess(res);
-                },function (errMsg) {
+                    typeof _this.option.onSuccess === 'function' && _this.option.onSuccess(res);
+                }, function (errMsg) {
                     _mall.errorTips(errMsg);
                 })
             }
 
             //如果是更新地址的话
-            if (isUpdate&&receiverInfo.status){
-
+            if (isUpdate && receiverInfo.status) {
+                _address.update(receiverInfo.data, function (res) {
+                    _mall.successTips('收货地址修改成功');
+                    _this.hide();
+                    typeof _this.option.onSuccess === 'function' && _this.option.onSuccess(res);
+                }, function (errMsg) {
+                    _mall.errorTips(errMsg);
+                })
             }
-        })
+        });
+
+        //点击关闭的x号以及它附近的时候 关闭弹窗
+        this.$modalWrap.find('.close').click(function () {
+            _this.hide();
+        });
+
+        //防止事件冒泡到内容区
+        this.$modalWrap.find('.modal-container').click(function (e) {
+           e.stopPropagation();
+        });
     },
     //加载弹窗后的数据处理
     loadModal: function () {
@@ -63,13 +79,14 @@ var addressModal = {
     //加载预制好的省份城市
     loadProvince: function () {
         var provinces = _cities.getProvinces() || [],
-            $provinceSelct = this.$modalWrap.find('#receiver-province');
+            $provinceSelect = this.$modalWrap.find('#receiver-province');
 
-        $provinceSelct.html(this.getSelectOption(provinces));
-        //是否回填
-        /*if(this.option.isUpdate&&this.option.data.receiverProvince){
-            $provinceSelct
-        }*/
+        $provinceSelect.html(this.getSelectOption(provinces));
+        //是否回填  更新的时候先预制好内容
+        if(this.option.isUpdate&&this.option.data.receiverProvince){
+            $provinceSelect.val(this.option.data.receiverProvince);
+            this.loadCities(this.option.data.receiverProvince);
+        }
     },
     //选中省份之后 加载过滤出来的城市
     loadCities: function (provinceName) {
