@@ -32,7 +32,9 @@ var addressModal = {
         this.$modalWrap.find('.address-btn').click(function () {
             var receiverInfo = _this.getReceiverInfo(),
                 isUpdate = _this.option.isUpdate;
-            console.log("123");
+            if(!receiverInfo.status){
+                _mall.errorTips(receiverInfo.errMsg);
+            }
             //如果是新地址的话
             if (!isUpdate && receiverInfo.status) {
                 _address.save(receiverInfo.data, function (res) {
@@ -61,9 +63,9 @@ var addressModal = {
             _this.hide();
         });
 
-        //防止事件冒泡到内容区
+        //防止事件冒泡到底层的订单确认内容区
         this.$modalWrap.find('.modal-container').click(function (e) {
-           e.stopPropagation();
+            e.stopPropagation();
         });
     },
     //加载弹窗后的数据处理
@@ -83,7 +85,7 @@ var addressModal = {
 
         $provinceSelect.html(this.getSelectOption(provinces));
         //是否回填  更新的时候先预制好内容
-        if(this.option.isUpdate&&this.option.data.receiverProvince){
+        if (this.option.isUpdate && this.option.data.receiverProvince) {
             $provinceSelect.val(this.option.data.receiverProvince);
             this.loadCities(this.option.data.receiverProvince);
         }
@@ -93,6 +95,10 @@ var addressModal = {
         var cities = _cities.getCities(provinceName) || [],
             $citiesSelect = this.$modalWrap.find('#receiver-city');
         $citiesSelect.html(this.getSelectOption(cities));
+        //如果当前是更新地址  并且当前传入的信息之中有城市的信息的话 对城市进行回填  并处理当当前的省份切换的时候会赋值不正确的问题
+        if(this.option.isUpdate&&this.option.data.receiverCity&&cities.indexOf(this.option.data.receiverCity)!==-1){
+            $citiesSelect.val(this.option.data.receiverCity);
+        }
     },
     //组织select框的html
     getSelectOption: function (optionArray) {
@@ -136,7 +142,13 @@ var addressModal = {
             result.errMsg = '请输入收件人的电话';
         } else if (!_mall.validate(receiverInfo.receiverPhone, 'phone')) {
             result.errMsg = '输入的电话格式不正确'
-        } else {
+        }
+        //邮政编码不能多于6位
+        else if(receiverInfo.receiverZip.length!==6){
+            result.errMsg='输入的邮政编码必须为6位';
+        }
+        else
+        {
             result.status = true;
             result.data = receiverInfo;
         }

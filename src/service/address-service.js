@@ -10,6 +10,7 @@ var _address = {
             data: {
                 pageSize: 50
             },
+            method:'POST',
             success: resolve,
             error: reject
         });
@@ -19,6 +20,7 @@ var _address = {
         _mall.request({
             url: _mall.getServerUrl('/shipping/add.do'),
             data: addressInfo,
+            method:'POST',
             success: resolve,
             error: reject
         });
@@ -28,6 +30,31 @@ var _address = {
         _mall.request({
             url:_mall.getServerUrl('/shipping/update.do'),
             data:addressInfo,
+            method:'POST',
+            success:resolve,
+            error:reject
+        })
+    },
+    //获取某个指定的收获地址
+    getAddress:function (shippingId,resolve,reject) {
+        _mall.request({
+            url:_mall.getServerUrl('/shipping/select.do'),
+            data:{
+                shippingId:shippingId
+            },
+            method:'POST',
+            success:resolve,
+            error:reject
+        })
+    },
+    //删除某个指定的收货地址
+    deleteAddress:function (shippingId,resolve,reject) {
+        _mall.request({
+            url:_mall.getServerUrl('/shipping/del.do'),
+            data:{
+                shippingId:shippingId
+            },
+            method:'POST',
             success:resolve,
             error:reject
         })

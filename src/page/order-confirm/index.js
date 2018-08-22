@@ -50,15 +50,45 @@ var page = {
         });
 
         //添加地址
-        $(document).on('click','.address-add',function () {
-            var $this=$(this);
+        $(document).on('click','.address-add',function (e) {
             addressModal.show({
                 isUpdate:false,
                 onSuccess:function () {
                     _this.loadAddressList();
                 }
             });
-        })
+        });
+
+        //对当前的地址进行编辑
+        $(document).on('click','.address-update',function (e) {
+            e.stopPropagation();
+            var shippingId=$(this).parents('.address-item').data('id');
+            _address.getAddress(shippingId,function (res) {
+                addressModal.show({
+                    isUpdate:true,
+                    data:res,
+                    onSuccess:function () {
+                        _this.loadAddressList();
+                    }
+                })
+            },function (errMsg) {
+                _mall.errorTips(errMsg)
+            });
+
+        });
+
+        //删除选中的地址
+        $(document).on('click','.address-delete',function (e) {
+            e.stopPropagation();
+            var shippingId=$(this).parents('.address-item').data('id');
+            if(window.confirm('确认删除该地址吗')){
+                _address.deleteAddress(shippingId,function (res) {
+                    _this.loadAddressList();
+                },function (errMsg) {
+                    _mall.errorTips(errMsg);
+                })
+            }
+        });
     },
     //加载地址列表
     loadAddressList: function () {
