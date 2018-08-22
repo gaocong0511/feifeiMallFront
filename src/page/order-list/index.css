@@ -33,6 +33,7 @@
     color: #c60023;
 }
 
+/**/
 .order-list-table .order-info .order-detail{
     float: right;
     color: #c60023;
@@ -48,4 +49,35 @@
     width: 80px;
     height: 80px;
     border: 1px solid #ddd;
+}
+
+.order-list-table .cell-info{
+    width: 45%;
+    text-align: left;
+}
+
+.order-list-table .cell-price{
+    width: 15%;
+    text-align: center;
+}
+
+.order-list-table .cell-count{
+    width: 15%;
+    text-align: center;
+}
+
+.order-list-table .cell-total{
+    width: 15%;
+    text-align: center;
+}
+
+/*错误信息的显示样式*/
+.err-tip{
+    height: 60px;
+    line-height: 60px;
+    color: #f60;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    background: #eee;
 }

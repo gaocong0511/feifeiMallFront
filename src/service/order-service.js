@@ -20,7 +20,9 @@ var _order={
             success:resolve,
             error:reject
         })
-    }
+    },
+    //加载订单列表
+
 };
 
 module.exports=_order;
