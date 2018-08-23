@@ -32,6 +32,7 @@ var config = {
         'cart': ['./src/page/cart/index.js'],
         'order-confirm': ['./src/page/order-confirm/index.js'],
         'order-list': ['./src/page/order-list/index.js'],
+        'order-detail': ['./src/page/order-detail/index.js'],
         'user-login': ['./src/page/user-login/index.js'],
         'user-register': ['./src/page/user-register/index.js'],
         'user-pass-reset': ['./src/page/user-pass-reset/index.js'],
@@ -43,7 +44,7 @@ var config = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         publicPath: '/dist',
-        filename: 'js/[name].js',
+        filename: 'js/[name].js'
     },
     externals: {
         'jquery': "window.jquery"
