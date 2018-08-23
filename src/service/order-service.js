@@ -17,12 +17,21 @@ var _order={
         _mall.request({
             url:_mall.getServerUrl('/order/create.do'),
             data:orderInfo,
+            method:'POST',
             success:resolve,
             error:reject
         })
     },
     //加载订单列表
-
+    getOrderList:function (listParam,resolve,reject) {
+        _mall.request({
+            url:_mall.getServerUrl('/order/list.do'),
+            data:listParam,
+            method:'POST',
+            success:resolve,
+            error:reject
+        })
+    }
 };
 
 module.exports=_order;

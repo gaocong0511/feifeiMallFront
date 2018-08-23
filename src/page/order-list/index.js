@@ -15,7 +15,7 @@ var page = {
         listParam: {
             pageNum: 1,
             pageSize: 10
-        },
+        }
     },
     init: function () {
         this.onLoad();
@@ -34,6 +34,38 @@ var page = {
 
         //首先显示一个加载中的动画
         $listCon.html('<div class="loading"></div>');
-
+        _order.getOrderList(_this.data.listParam, function (res) {
+            //利用返回回来的数据进行数据的渲染
+            orderListHtml = _mall.renderHtml(orderListTemplate, res);
+            $listCon.html(orderListHtml);
+            _this.loadPagination({
+                hasPreviousPage: res.hasPreviousPage,
+                prePage: res.prePage,
+                hasNextPage: res.hasNextPage,
+                nextPage: res.nextPage,
+                pageNum: res.pageNum,
+                pages: res.pages
+            }, function (errMsg) {
+                $listCon.html('<p class="err-tip">加载订单失败' + errMsg + '</p>')
+            })
+        });
+    },
+    //加载分页插件
+    loadPagination: function (pageInfo) {
+        var _this = this;
+        if (!_this.pagination) {
+            (this.pagination = new Pagination());
+        }
+        _this.pagination.render($.extend({}, pageInfo, {
+            container: $('.pagination'),
+            onSelectPage: function (pageNum) {
+                _this.data.listParam.pageNum = pageNum;
+                _this.loadOrderList();
+            }
+        }))
     }
-}
+};
+
+$(function () {
+    page.init();
+});
