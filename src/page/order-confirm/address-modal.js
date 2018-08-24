@@ -118,7 +118,7 @@ var addressModal = {
         receiverInfo.receiverName = $.trim(this.$modalWrap.find('#receiver-name').val());
         receiverInfo.receiverProvince = $.trim(this.$modalWrap.find('#receiver-province').val());
         receiverInfo.receiverCity = $.trim(this.$modalWrap.find('#receiver-city').val());
-        receiverInfo.receiverAddress = $.trim(this.$modalWrap.find('#receiver-name').val());
+        receiverInfo.receiverAddress = $.trim(this.$modalWrap.find('#receiver-address').val());
         receiverInfo.receiverPhone = $.trim(this.$modalWrap.find('#receiver-phone').val());
         receiverInfo.receiverZip = $.trim(this.$modalWrap.find('#receiver-zip').val());
 
