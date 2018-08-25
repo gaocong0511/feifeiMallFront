@@ -12,6 +12,12 @@ require('./index.css');
 $(function(){
     var type=mall.getUrlParam('type')||'default',
     $element=$('.'+type+'-success');
-    $element.show();
 
+
+    if(type==='payment'){
+        var orderNumber=mall.getUrlParam('orderNumber'),
+            $orderNumber=$element.find('.order-number');
+        $orderNumber.attr('href',$orderNumber.attr('href')+orderNumber);
+    }
+    $element.show();
 });
