@@ -44,7 +44,7 @@ var config = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        publicPath: '/dist',
+        publicPath: 'dev'===WEBPACK_ENV?'/dist/':'//s.monkgow.xyz/mall-fe/dist/',
         filename: 'js/[name].js'
     },
     externals: {

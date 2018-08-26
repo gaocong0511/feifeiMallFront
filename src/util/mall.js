@@ -9,7 +9,7 @@
 var Hogan = require('hogan.js');
 
 var conf = {
-    serverHost: 'http://127.0.0.1:8088'
+    serverHost: ''
 };
 
 var _mall = {
