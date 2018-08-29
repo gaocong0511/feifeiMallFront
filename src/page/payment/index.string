@@ -1,0 +1,5 @@
+<p class="payment-tips">订单{{orderNo}}提交成功</p>
+<p class="payment-tips enhance">请使用支付宝（沙箱环境扫描如下二维码）</p>
+<div class="img-con">
+    <img src="{{qrUrl}}" alt="支付二维码" class="qr-code">
+</div>

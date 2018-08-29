@@ -1,0 +1,39 @@
+{
+  "name": "fmall-fe",
+  "version": "1.0.0",
+  "description": "商城前端代码",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "WEBPACK_ENV=dev webpack-dev-server --mode development --inline --port 8088",
+    "dev_win": "set WEBPACK_ENV=dev && webpack-dev-server  --mode development --inline --port 8088",
+    "dist": "WEBPACK_ENV=online webpack -p",
+    "dist_win": "set WEBPACK_ENV=online && webpack -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gaocong0511/feifeiMallFront.git"
+  },
+  "author": "gaocong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gaocong0 511/feifeiMallFront/issues"
+  },
+  "homepage": "https://github.com/gaocong0511/feifeiMallFront#readme",
+  "devDependencies": {
+    "css-loader": "^1.0.0",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^1.1.11",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^0.21.0",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.16.2",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5"
+  },
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "hogan": "^1.0.2"
+  }
+}

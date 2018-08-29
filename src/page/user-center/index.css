@@ -1,0 +1,14 @@
+/*个人中心显示的时候每一行的样式*/
+.form-line {
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+}
+
+/*标题的显示样式*/
+.form-line .label {
+    display: inline-block;
+    /* 定宽看起来更加的整齐*/
+    width: 60px;
+    text-align: center;
+}
